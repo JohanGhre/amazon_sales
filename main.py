@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
@@ -63,10 +62,10 @@ def create_line_chart(data, x, y, title, colors=None):
     fig.update_yaxes(showgrid=False, zeroline=False)  # Remove horizontal gridlines and zero line
     return fig
 
-# Function to load the Ridge model
+import joblib
+# Function to load the Ridge model using joblib
 def load_model():
-    with open('ridge_model.pkl', 'rb') as file:
-        model = pickle.load(file)
+    model = joblib.load('ridge_model.pkl')
     return model
 
 # Function to predict with model
