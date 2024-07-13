@@ -189,9 +189,6 @@ with col7:
     st.metric("Average Unit Price", f"${avg_unit_price:.2f}")
 
 
-
-
-
 # Add prediction section
 st.header("Profit Prediction")
 st.write("Enter the details to predict profit:")
